@@ -1,0 +1,34 @@
+version: 2.1
+
+executors:
+docker_cimg_base:
+   docker:
+     - image: cimg/base:2023.02-20.04
+
+jobs:
+  step_1:
+    executor: docker_cimg_base
+    resource_class: small
+    steps:
+      - run:
+          command: echo "step_1" > /tmp/step_1.md 
+          working_directory: /tmp/repo
+      - persist_to_workspace:
+          root: /tmp
+          paths:
+            - step_1.md
+
+  step_2:
+    executor: docker_cimg_base
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /root/circleci
+      - run:
+          command: cat step_1.md
+
+workflows:
+  # the always-run workflow is always triggered, regardless of the pipeline parameters.
+  always-run:
+    jobs:
+ 
