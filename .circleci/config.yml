@@ -29,9 +29,10 @@ jobs:
   
 workflows:
   version: 2
-  jobs:
-    - step_1
-    - step_2:
-        requires:
-           - step_1 
- 
+  test_workflow:
+    jobs:
+      - step_1
+      - step_2:
+          requires:
+            - step_1 
+   
