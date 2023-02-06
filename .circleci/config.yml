@@ -33,6 +33,6 @@ workflows:
   jobs:
     - step_1
     - step_2:
-      requires:
+      required:
         - step_1
  
