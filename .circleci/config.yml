@@ -28,6 +28,7 @@ jobs:
           command: cat step_1.md
 
 workflows:
+  version: 2
   # the always-run workflow is always triggered, regardless of the pipeline parameters.
   test:
     jobs:
