@@ -10,6 +10,8 @@ jobs:
     executor: docker_cimg_base
     resource_class: small
     steps:
+      - checkout:
+        -path: /tmp/repo
       - run:
           command: echo "step_1" > /tmp/step_1.md 
           working_directory: /tmp/repo
@@ -17,6 +19,7 @@ jobs:
           root: /tmp
           paths:
             - step_1.md
+            - repo/*
 
   step_2:
     executor: docker_cimg_base
