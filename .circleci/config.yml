@@ -25,7 +25,7 @@ jobs:
       - attach_workspace:
           at: /root/circleci
       - run:
-        command: cat /tmp/step_1.md
+          command: cat /tmp/step_1.md
   
 workflows:
   version: 2
