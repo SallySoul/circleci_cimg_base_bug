@@ -11,7 +11,7 @@ jobs:
     resource_class: small
     steps:
       - checkout:
-        -path: /tmp/repo
+          path: /tmp/repo
       - run:
           command: echo "step_1" > /tmp/step_1.md 
           working_directory: /tmp/repo
