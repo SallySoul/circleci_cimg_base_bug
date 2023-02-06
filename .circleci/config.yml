@@ -30,10 +30,9 @@ jobs:
 workflows:
   version: 2
   # the always-run workflow is always triggered, regardless of the pipeline parameters.
-  test:
-    jobs:
-      - step_1
-      - step_2:
-        requires:
-          - step_1
+  jobs:
+    - step_1
+    - step_2:
+      requires:
+        - step_1
  
