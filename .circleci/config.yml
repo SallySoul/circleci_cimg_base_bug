@@ -23,7 +23,7 @@ jobs:
     resource_class: small
     steps:
       - attach_workspace:
-          at: /root/circleci
+          at: /tmp
       - run:
           command: cat /tmp/step_1.md
   
